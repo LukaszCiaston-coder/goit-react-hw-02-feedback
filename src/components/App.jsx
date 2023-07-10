@@ -3,6 +3,7 @@ import { Statistics } from './Statistics/Statistic';
 import { Section } from './Section/Section';
 import { Notification } from './Notification/Notification';
 import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
+import './App.css';
 
 export const App = () => {
   const [state, setState] = useState({
@@ -30,6 +31,7 @@ export const App = () => {
   };
 
   return (
+    <div className="appContainer">
     <Section title={'Please leave feedback'}>
       <FeedbackOptions
         options={Object.keys(state)}
@@ -46,6 +48,7 @@ export const App = () => {
       ) : (
         <Notification message="There is no feedback" />
       )}
-    </Section>
+      </Section>
+    </div>
   );
 };
